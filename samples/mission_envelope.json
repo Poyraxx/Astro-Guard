@@ -1,0 +1,28 @@
+{
+  "mission_id": "bkzs-operasyon",
+  "allowed_channel": "bkzs-nav",
+  "mission_phase": "operational",
+  "allowed_start_hour": 0,
+  "allowed_end_hour": 23,
+  "max_speed_mps": 65.0,
+  "max_route_drift_m": 220.0,
+  "primary_zone": {
+    "name": "istanbul-core",
+    "center_latitude": 41.0082,
+    "center_longitude": 28.9784,
+    "radius_m": 900.0
+  },
+  "forbidden_zones": [
+    {
+      "name": "forbidden-hub",
+      "center_latitude": 41.0205,
+      "center_longitude": 29.0465,
+      "radius_m": 140.0
+    }
+  ],
+  "source_roles": {
+    "bkzs-core": "command",
+    "bkzs-edge-1": "edge",
+    "bkzs-edge-2": "edge"
+  }
+}

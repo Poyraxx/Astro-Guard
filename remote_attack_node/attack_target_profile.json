@@ -1,0 +1,20 @@
+{
+  "target_host": "192.168.1.50",
+  "target_port": 9000,
+  "protocol": "udp",
+  "source": "bkzs-edge-1",
+  "signal_secret": "bkzs-demo-signal",
+  "session_nonce": "bkzs-demo-session",
+  "shadow_salt": "bkzs-demo-shadow",
+  "op_code": "BKZS-DEMO-2026",
+  "satellite_profile": "generic-bkzs",
+  "decision_feed_protocol": "udp",
+  "decision_feed_port": 9200,
+  "relay_protocol": "udp",
+  "secure_port": 9101,
+  "shadow_port": 9102,
+  "lab_transport": "1",
+  "lab_random_ip": "1",
+  "normal_lab_transport": "1",
+  "normal_lab_fixed_ip": "10.10.10.10"
+}

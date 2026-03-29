@@ -1,0 +1,23 @@
+{
+  "bulletin_id": "bulletin-demo-001",
+  "valid_from": "2026-03-28T12:00:00+00:00",
+  "valid_to": "2026-03-28T18:00:00+00:00",
+  "risk_zones": [
+    {
+      "name": "elevated-east",
+      "center_latitude": 41.0184,
+      "center_longitude": 29.0118,
+      "radius_m": 180.0,
+      "severity": "high"
+    }
+  ],
+  "source_risk": {
+    "bkzs-edge-2": 2
+  },
+  "threshold_overrides": {
+    "mission_max_speed_mps": 48.0,
+    "mission_max_route_drift_m": 160.0,
+    "max_peer_position_delta_m": 120.0
+  },
+  "signature": "a261d0d590aa1b63465a81d0e338c0bf"
+}
