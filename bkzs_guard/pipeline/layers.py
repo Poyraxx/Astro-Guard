@@ -42,6 +42,7 @@ REQUIRED_ROOT_FIELDS = (
     "metrics",
 )
 REQUIRED_METRIC_FIELDS = ("cn0", "power", "doppler", "sat_count", "clock_bias", "clock_drift")
+HARDWARE_GENESIS_RESYNC_SOURCES = {"bkzs-esp32-1", "bkzs-esp8266-1"}
 
 
 def build_feature_snapshot(
@@ -219,7 +220,10 @@ def build_feature_snapshot(
         and not snapshot.source_locked
         and not snapshot.duplicate_packet_id
         and not snapshot.secret_compromised
-        and state.get_epoch_chain_failures(packet.source) >= 1
+        and (
+            state.get_epoch_chain_failures(packet.source) >= 1
+            or packet.source in HARDWARE_GENESIS_RESYNC_SOURCES
+        )
     )
 
     now = utc_now()

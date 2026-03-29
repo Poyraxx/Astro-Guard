@@ -20,6 +20,7 @@ class Esp8266AdapterTests(unittest.TestCase):
         self.assertIn("#define BKZS_USE_UDP 1", header)
         self.assertIn('#define BKZS_SOURCE "bkzs-esp8266-1"', header)
         self.assertIn(f'#define BKZS_SIGNAL_SECRET "{config.security.signal_secret}"', header)
+        self.assertIn("#define BKZS_FORCE_GENESIS_ON_BOOT 1", header)
 
 
 if __name__ == "__main__":

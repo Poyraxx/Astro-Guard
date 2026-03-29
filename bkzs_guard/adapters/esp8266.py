@@ -49,7 +49,7 @@ def build_esp8266_profile_header(
             "#define BKZS_SEND_INTERVAL_MS 1000",
             "#define BKZS_SEQ_START 100",
             "#define BKZS_NTP_SERVER \"pool.ntp.org\"",
-            "#define BKZS_FORCE_GENESIS_ON_BOOT 0",
+            "#define BKZS_FORCE_GENESIS_ON_BOOT 1",
             "",
         ]
     )
@@ -86,8 +86,8 @@ def ensure_esp8266_wifi_header(path: Path = ESP8266_WIFI_HEADER_PATH) -> Path:
                 [
                     "#pragma once",
                     "// Bu dosyayi kendi Wi-Fi agina gore duzenle.",
-                    '#define BKZS_WIFI_SSID "DemoWiFi"',
-                    '#define BKZS_WIFI_PASSWORD "DemoPassword123"',
+                    '#define BKZS_WIFI_SSID "WiFi_Adi"',
+                    '#define BKZS_WIFI_PASSWORD "WiFi_Sifresi"',
                     "",
                 ]
             ),

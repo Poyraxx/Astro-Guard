@@ -116,6 +116,28 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(decision.decision, "accepted")
         self.assertTrue(any(item.reason_code == "epoch_chain_resynced" for item in decision.trace))
 
+    def test_hardware_sender_can_repeat_genesis_proof_without_epoch_break(self) -> None:
+        first = json.loads(self.lab.unwrap_packet_text(self.lab.generate_normal_batch(count=1, source="bkzs-esp8266-1", start_seq=150)[0]))
+        second = json.loads(self.lab.unwrap_packet_text(self.lab.generate_normal_batch(count=1, source="bkzs-esp8266-1", start_seq=151)[0]))
+
+        for packet in (first, second):
+            packet["challenge_proof"] = build_challenge_proof(
+                self.engine.config.security.signal_secret,
+                self.engine.config.security.session_nonce,
+                self.engine.config.security.shadow_lane_salt,
+                "bkzs-esp8266-1",
+                packet["epoch_id"],
+                initial_clean_hash("bkzs-esp8266-1", self.engine.config.security.session_nonce),
+                lane="primary",
+            )
+
+        first_decision = self.engine.process_raw(self._frame_packet(first))
+        second_decision = self.engine.process_raw(self._frame_packet(second))
+
+        self.assertEqual(first_decision.decision, "accepted")
+        self.assertEqual(second_decision.decision, "accepted")
+        self.assertTrue(any(item.reason_code == "epoch_chain_resynced" for item in second_decision.trace))
+
     def test_attack_sim_acceptance_does_not_poison_mesh_peer_history(self) -> None:
         attack_like_peer = json.loads(self.lab.unwrap_packet_text(self.lab.generate_normal_batch(count=1, source="bkzs-core", start_seq=80)[0]))
         attack_like_peer["packet_id"] = "attack-sim-peer-001"

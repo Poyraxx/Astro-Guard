@@ -6,11 +6,11 @@ from dataclasses import dataclass, field
 
 @dataclass(slots=True)
 class SecurityConfig:
-    ui_password: str = "bkzs-demo-ui"
-    signal_secret: str = "bkzs-demo-signal"
-    session_nonce: str = "bkzs-demo-session"
-    shadow_lane_salt: str = "bkzs-demo-shadow"
-    expected_op_code: str = "BKZS-DEMO-2026"
+    ui_password: str = "astro-guard"
+    signal_secret: str = "bkzs-signal-guard"
+    session_nonce: str = "bkzs-session-seal"
+    shadow_lane_salt: str = "bkzs-shadow-lane"
+    expected_op_code: str = "BKZS-OPS-2026"
     trusted_sources: tuple[str, ...] = ("bkzs-core", "bkzs-edge-1", "bkzs-edge-2", "bkzs-esp32-1", "bkzs-esp8266-1")
 
 
@@ -158,11 +158,11 @@ class AppConfig:
 
 def load_app_config() -> AppConfig:
     security = SecurityConfig(
-        ui_password=os.getenv("BKZS_UI_PASSWORD", "bkzs-demo-ui"),
-        signal_secret=os.getenv("BKZS_SIGNAL_SECRET", "bkzs-demo-signal"),
-        session_nonce=os.getenv("BKZS_SESSION_NONCE", "bkzs-demo-session"),
-        shadow_lane_salt=os.getenv("BKZS_SHADOW_SALT", "bkzs-demo-shadow"),
-        expected_op_code=os.getenv("BKZS_OP_CODE", "BKZS-DEMO-2026"),
+        ui_password=os.getenv("BKZS_UI_PASSWORD", "astro-guard"),
+        signal_secret=os.getenv("BKZS_SIGNAL_SECRET", "bkzs-signal-guard"),
+        session_nonce=os.getenv("BKZS_SESSION_NONCE", "bkzs-session-seal"),
+        shadow_lane_salt=os.getenv("BKZS_SHADOW_SALT", "bkzs-shadow-lane"),
+        expected_op_code=os.getenv("BKZS_OP_CODE", "BKZS-OPS-2026"),
     )
     bulletin = BulletinConfig(
         enabled=os.getenv("BKZS_BULLETIN_ENABLED", "1") != "0",

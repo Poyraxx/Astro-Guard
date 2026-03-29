@@ -86,8 +86,8 @@ def ensure_esp32_wifi_header(path: Path = ESP32_WIFI_HEADER_PATH) -> Path:
                 [
                     "#pragma once",
                     "// Bu dosyayi kendi Wi-Fi agina gore duzenle.",
-                    '#define BKZS_WIFI_SSID "DemoWiFi"',
-                    '#define BKZS_WIFI_PASSWORD "DemoPassword123"',
+                    '#define BKZS_WIFI_SSID "WiFi_Adi"',
+                    '#define BKZS_WIFI_PASSWORD "WiFi_Sifresi"',
                     "",
                 ]
             ),

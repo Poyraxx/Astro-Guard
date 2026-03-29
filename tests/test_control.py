@@ -19,7 +19,7 @@ def _free_port() -> int:
 class ControlCenterTests(unittest.TestCase):
     def test_dashboard_snapshot_tracks_demo_results(self) -> None:
         app = BKZSControlCenter()
-        self.assertTrue(app.authenticate(app.config.security.ui_password))
+        self.assertTrue(app.authenticate("astro-guard"))
 
         results = app.load_normal_run(count=3)
         snapshot = app.dashboard_snapshot()

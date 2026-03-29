@@ -60,7 +60,7 @@ SATELLITE_PROFILES: dict[str, SatelliteProfile] = {
         allowed_transponder_bandwidths_mhz=(36, 72),
         coverage_hint="East, West",
         public_note="42E GEO Ku-band communications satellite with 36/72 MHz transponders.",
-        aliases=("TÃ¼rksat 3A",),
+        aliases=("Türksat 3A",),
     ),
     "turksat-4a": SatelliteProfile(
         profile_id="turksat-4a",
@@ -77,7 +77,7 @@ SATELLITE_PROFILES: dict[str, SatelliteProfile] = {
         allowed_transponder_bandwidths_mhz=(27, 33, 54, 72),
         coverage_hint="Turkey, East, West, Africa",
         public_note="42E GEO communications satellite with Ku, Ku-BSS and Ka capacity.",
-        aliases=("TÃ¼rksat 4A",),
+        aliases=("Türksat 4A",),
     ),
     "turksat-4b": SatelliteProfile(
         profile_id="turksat-4b",
@@ -94,7 +94,7 @@ SATELLITE_PROFILES: dict[str, SatelliteProfile] = {
         allowed_transponder_bandwidths_mhz=(36, 72),
         coverage_hint="Turkey, East, West",
         public_note="50E GEO communications satellite with first C-band use in the Turksat fleet.",
-        aliases=("TÃ¼rksat 4B",),
+        aliases=("Türksat 4B",),
     ),
     "turksat-5a": SatelliteProfile(
         profile_id="turksat-5a",
@@ -111,7 +111,7 @@ SATELLITE_PROFILES: dict[str, SatelliteProfile] = {
         allowed_transponder_bandwidths_mhz=(36, 72),
         coverage_hint="Turkey, East, West, MENA, South Africa, West Africa",
         public_note="31E GEO communications satellite for Ku and New Ku coverage.",
-        aliases=("TÃ¼rksat 5A",),
+        aliases=("Türksat 5A",),
     ),
     "turksat-5b": SatelliteProfile(
         profile_id="turksat-5b",
@@ -127,7 +127,7 @@ SATELLITE_PROFILES: dict[str, SatelliteProfile] = {
         allowed_protocols=("transponder-metadata", "hts-monitor"),
         coverage_hint="Turkey, West, Middle East, Ka spot beams",
         public_note="42E GEO HTS-class communications satellite with over 50 Gbps Ka-band capacity.",
-        aliases=("TÃ¼rksat 5B",),
+        aliases=("Türksat 5B",),
     ),
     "turksat-6a": SatelliteProfile(
         profile_id="turksat-6a",
@@ -144,7 +144,7 @@ SATELLITE_PROFILES: dict[str, SatelliteProfile] = {
         allowed_protocols=("transponder-metadata", "broadcast-monitor"),
         coverage_hint="Turkey, East, West",
         public_note="First indigenous Turkish communications satellite in GEO at 42E.",
-        aliases=("TÃ¼rksat 6A",),
+        aliases=("Türksat 6A",),
     ),
     "gokturk-1": SatelliteProfile(
         profile_id="gokturk-1",
@@ -161,7 +161,7 @@ SATELLITE_PROFILES: dict[str, SatelliteProfile] = {
         resolution_hint="high-resolution optical",
         coverage_hint="Optical remote sensing",
         public_note="High-resolution optical remote-sensing satellite.",
-        aliases=("GÃ–KTÃœRK-1",),
+        aliases=("GÖKTÜRK-1",),
     ),
     "gokturk-2": SatelliteProfile(
         profile_id="gokturk-2",
@@ -178,7 +178,7 @@ SATELLITE_PROFILES: dict[str, SatelliteProfile] = {
         resolution_hint="high-resolution optical",
         coverage_hint="Remote sensing",
         public_note="Indigenously developed high-resolution remote-sensing satellite.",
-        aliases=("GÃ–KTÃœRK-2",),
+        aliases=("GÖKTÜRK-2",),
     ),
     "imece": SatelliteProfile(
         profile_id="imece",
@@ -196,7 +196,7 @@ SATELLITE_PROFILES: dict[str, SatelliteProfile] = {
         resolution_hint="sub-meter electro-optical",
         coverage_hint="Global earth observation",
         public_note="Sub-meter EO mission with public X-band CCSDS high-rate downlink and S-band TM/TC.",
-        aliases=("Ä°MECE", "IMECE", "GOKTURK-2B"),
+        aliases=("İMECE", "IMECE", "GOKTURK-2B"),
     ),
 }
 

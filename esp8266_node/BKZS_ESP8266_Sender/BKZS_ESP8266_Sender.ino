@@ -376,7 +376,8 @@ void sendNormalPacket() {
 
   const String source = String(BKZS_SOURCE);
   const String packetId = randomPacketId();
-  const String challengeProof = buildChallengeProof(source, epochId, g_previousCleanHash);
+  const String proofPreviousCleanHash = initialCleanHashForSource(source);
+  const String challengeProof = buildChallengeProof(source, epochId, proofPreviousCleanHash);
   const String packetWithoutChecksumAndFlowTag = buildPacketWithoutChecksumAndFlowTag(
       packetId,
       source,
@@ -404,7 +405,7 @@ void sendNormalPacket() {
     return;
   }
 
-  g_previousCleanHash = digest24(packetWithoutChecksumAndFlowTag);
+  g_previousCleanHash = proofPreviousCleanHash;
   g_sequence += 1;
   saveChainState();
 
