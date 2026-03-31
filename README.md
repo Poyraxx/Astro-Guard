@@ -5,7 +5,7 @@ BKZS Guard, BKZS sinyal dogrulama ve anti-spoofing icin tasarlanmis mikro-katman
 ## Ozellikler
 
 - 13 mikro-katmanli karar mimarisi
-- Shadow Lane + Epoch Bait Chain tabanli deception hattÄ±
+- Shadow Lane + Epoch Bait Chain tabanli deception
 - Credential-valid breach ve sifre sizintisi suphe uyarisi
 - Trust Mesh ve quorum mantigi
 - Holdover ve response mode gecisleri
